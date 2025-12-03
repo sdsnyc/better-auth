@@ -133,6 +133,7 @@ export const paypal = (options: PayPalOptions) => {
 				});
 
 				if (!response.data) {
+					logger.debug("PayPal token response data is missing:", response);
 					throw new BetterAuthError("FAILED_TO_GET_ACCESS_TOKEN");
 				}
 
